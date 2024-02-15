@@ -11,6 +11,7 @@ gem 'faker'
 gem 'rubocop', require: false
 gem 'rubocop-minitest'
 gem 'rubocop-rails', require: false
+gem 'slim_lint'
 gem 'slim-rails'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
