@@ -7,6 +7,7 @@ ruby File.read('.ruby-version').strip
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.1.3'
 
+gem 'faker'
 gem 'rubocop', require: false
 gem 'rubocop-minitest'
 gem 'rubocop-rails', require: false
