@@ -1,9 +1,12 @@
-setup:
+setup: install db-prepare
+
+install:
 	bin/setup
-	bin/rails db:drop
-    bin/rails db:migrate
-    bin/rails db:seed
 	yarn
+
+db-prepare:
+	bin/rails db:reset
+	bin/rails db:fixtures:load
 
 start:
 	bin/dev
