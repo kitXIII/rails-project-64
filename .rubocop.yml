@@ -14,4 +14,11 @@ Style/Documentation:
 
 Metrics/BlockLength:
   Exclude:
-    - 'config/environments/development.rb'
+    - 'config/**/*'
+
+Layout/LineLength:
+  Exclude:
+    - 'config/**/*'
+
+Style/HashEachMethods:
+  Enabled: false

@@ -4,5 +4,9 @@ nav.navbar.border-bottom.pb-md-3
     span
       | Блог
   ul.navbar-nav.flex-row.gap-2
-    = link_to 'Войти', root_path, class: 'nav-link px-2 link-primary'
-    = link_to 'Зарегистрироваться', root_path, class: 'nav-link px-2 link-primary'
+    - if user_signed_in?
+      li = link_to 'Выйти', destroy_user_session_path, class: 'nav-link px-2 link-primary',
+        data: { turbo_method: :delete }
+    - else
+      li = link_to 'Войти', new_user_session_path, class: 'nav-link px-2 link-primary'
+      li = link_to 'Зарегистрироваться', new_user_registration_path, class: 'nav-link px-2 link-primary'

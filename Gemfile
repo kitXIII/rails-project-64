@@ -7,7 +7,10 @@ ruby '3.2.2'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.1.3'
 
+gem 'devise'
+gem 'devise-i18n'
 gem 'faker'
+gem 'rails-i18n'
 gem 'rubocop', require: false
 gem 'rubocop-minitest'
 gem 'rubocop-rails', require: false
@@ -31,6 +34,7 @@ gem 'turbo-rails'
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'stimulus-rails'
 
+# Bundle and process CSS [https://github.com/rails/cssbundling-rails]
 # Bundle and process CSS [https://github.com/rails/cssbundling-rails]
 gem 'cssbundling-rails'
 
@@ -64,14 +68,8 @@ group :development, :test do
 end
 
 group :development do
-  # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem 'i18n-debug'
   gem 'web-console'
-
-  # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
-  # gem "rack-mini-profiler"
-
-  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
 end
 
 group :production do
@@ -79,7 +77,6 @@ group :production do
 end
 
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
   gem 'minitest-power_assert'
   gem 'selenium-webdriver'
