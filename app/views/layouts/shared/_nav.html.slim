@@ -5,6 +5,10 @@ nav.navbar.border-bottom.pb-md-3
       | Блог
   ul.navbar-nav.flex-row.gap-2
     - if user_signed_in?
+      li.py-2.flex-shrink-1
+        span.text-secondary
+          = current_user.email
+
       li = link_to 'Выйти', destroy_user_session_path, class: 'nav-link px-2 link-primary',
         data: { turbo_method: :delete }
     - else
