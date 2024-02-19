@@ -8,17 +8,10 @@ AllCops:
     - 'bin/**/*'
     - 'db/schema.rb'
     - 'db/migrate/**/*'
+    - 'config/**/*'
 
 Style/Documentation:
   Enabled: false
-
-Metrics/BlockLength:
-  Exclude:
-    - 'config/**/*'
-
-Layout/LineLength:
-  Exclude:
-    - 'config/**/*'
 
 Style/HashEachMethods:
   Enabled: false
