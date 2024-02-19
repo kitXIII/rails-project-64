@@ -1,16 +1,24 @@
-nav.navbar.border-bottom.pb-md-3
-  = link_to root_path, class: 'd-flex align-items-center link-body-emphasis text-decoration-none px-2' do
+.container
+  = link_to root_path, class: 'd-flex align-items-center navbar-brand' do
     = image_tag asset_path('logo.svg'), width: 24, alt: 'logo', class: 'bi me-2'
     span
-      | Блог
-  ul.navbar-nav.flex-row.gap-2
-    - if user_signed_in?
-      li.py-2.flex-shrink-1
-        span.text-secondary
-          = current_user.email
+      'Блог
 
-      li = link_to 'Выйти', destroy_user_session_path, class: 'nav-link px-2 link-primary',
-        data: { turbo_method: :delete }
-    - else
-      li = link_to 'Войти', new_user_session_path, class: 'nav-link px-2 link-primary'
-      li = link_to 'Зарегистрироваться', new_user_registration_path, class: 'nav-link px-2 link-primary'
+  button.navbar-toggler( type='button' data-bs-toggle='collapse' data-bs-target='#navbarCollapse'
+    aria-controls='navbarCollapse' aria-expanded='false', aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+
+  .collapse.navbar-collapse id='navbarCollapse'
+    ul.navbar-nav.gap-md-2.ms-auto.align-items-end.my-2.my-md-0
+      - if user_signed_in?
+        li.py-2.flex-shrink-1
+          span.text-primary
+            = current_user.email
+
+        li = link_to 'Выйти', destroy_user_session_path, class: 'nav-link px-2',
+          data: { turbo_method: :delete }
+      - else
+        li = link_to 'Войти', new_user_session_path,
+          class: "nav-link px-2 #{'active' if current_page?(new_user_session_path)}"
+        li = link_to 'Зарегистрироваться', new_user_registration_path,
+          class: "nav-link px-2 #{'active' if current_page?(new_user_registration_path)}"

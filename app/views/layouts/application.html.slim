@@ -6,17 +6,16 @@ html lang='ru'
     = csp_meta_tag
     meta charset='utf-8'
     meta name='keywords' content='blog posts users public'
-    meta content='text/html; charset=UTF-8' http-equiv='Content-Type' /
-    meta content='width=device-width,initial-scale=1' name='viewport' /
+    meta content='text/html; charset=UTF-8' http-equiv='Content-Type'
+    meta content='width=device-width,initial-scale=1' name='viewport'
     = stylesheet_link_tag 'application', 'data-turbo-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbo-track': 'reload', type: 'module'
+    = javascript_include_tag 'application', 'data-turbo-track': 'reload', type: 'module', defer: true
 
-  body.container.py-2
-    header.mb-3
+  body.pt-5
+    header.navbar.bg-body-tertiary.navbar-expand-md.fixed-top.shadow-sm
       = render 'layouts/shared/nav'
 
-    = render 'layouts/shared/flash'
+    main.container.mt-2.py-3
+      = render 'layouts/shared/flash'
 
-    main
-      h1 = yield :title
       = yield
