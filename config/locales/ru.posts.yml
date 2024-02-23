@@ -11,9 +11,8 @@ ru:
         body: "(от %{min} до %{max} символов)"
     create:
       success: Ваш пост опубликован.
-    shared:
-      post_short:
-        read_more: Читать далее
+    post:
+      read_more: Читать далее
   helpers:
     submit:
       post:
