@@ -6,6 +6,11 @@
 
 * Ruby 3.2.2
 
+### Features
+
+* Authentication with [devise](https://github.com/heartcombo/devise)
+* Adaptive UI with [bootstrap](https://getbootstrap.com)
+
 ### Example
 
 [Live demo](https://kitxiii-blog.onrender.com/)
