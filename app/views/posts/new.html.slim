@@ -1,0 +1,13 @@
+h1.mb-3 = t('.title')
+
+= simple_form_for(@post) do |f|
+  .form-inputs
+    = f.input :title, hint: t('.hints.title', min: Post::MIN_TITLE_LENGTH, max: Post::MAX_TITLE_LENGTH)
+
+    = f.association :category, required: true
+
+    = f.input :body, input_html: { rows: 10 },
+                     hint: t('.hints.body', min: Post::MIN_BODY_LENGTH, max: Post::MAX_BODY_LENGTH)
+
+  .form-actions.mb-3
+    = f.button :submit, class: 'btn-primary'

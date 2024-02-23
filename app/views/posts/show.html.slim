@@ -1,0 +1,13 @@
+.container
+  nav
+    ul.breadcrumb
+      li.breadcrumb-item
+        = link_to t('.all_posts'), root_path, class: 'text-decoration-none'
+      li.breadcrumb-item = @post.category.name
+  article
+    h1.mb-4
+      = @post.title
+    = simple_format(@post.body)
+    .d-flex.flex-wrap.text-muted.gap-2.mt-4
+      strong = @post.creator.email
+      span = distance_of_time_in_words_to_now(@post.created_at)

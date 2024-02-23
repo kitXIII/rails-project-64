@@ -1,0 +1,20 @@
+ru:
+  posts:
+    index:
+      title: Коллективный блог
+    show:
+      all_posts: Все посты
+    new:
+      title: Новый пост
+      hints:
+        title: "(%{min}-%{max} символов)"
+        body: "(от %{min} до %{max} символов)"
+    create:
+      success: Ваш пост опубликован.
+    shared:
+      post_short:
+        read_more: Читать далее
+  helpers:
+    submit:
+      post:
+        create: Опубликовать

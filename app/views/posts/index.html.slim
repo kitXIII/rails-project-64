@@ -1,0 +1,5 @@
+h1.mb-3 = t('.title')
+
+.d-flex.flex-column.gap-3.pb-3
+  - @posts.each do |post|
+    = render 'posts/shared/post_short', post:
