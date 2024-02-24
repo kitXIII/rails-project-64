@@ -4,6 +4,7 @@ ru:
       title: Коллективный блог
     show:
       all_posts: Все посты
+      comments: Комментарии
     new:
       title: Новый пост
       hints:
@@ -13,7 +14,12 @@ ru:
       success: Ваш пост опубликован.
     post:
       read_more: Читать далее
+    comments:
+      create:
+        success: Ваш комментарий добавлен
   helpers:
     submit:
       post:
         create: Опубликовать
+      post_comment:
+        create: Оставить комментарий

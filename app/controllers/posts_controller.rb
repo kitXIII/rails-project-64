@@ -3,11 +3,12 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create]
   def index
-    @posts = Post.order(created_at: :desc)
+    @posts = Post.all
   end
 
   def show
     @post = Post.find params[:id]
+    @new_comment = PostComment.new
   end
 
   def new

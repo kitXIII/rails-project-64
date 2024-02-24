@@ -1,0 +1,5 @@
+.card.mt-2
+  .card-header.d-flex.flex-wrap.gap-2.align-items-baseline.justify-content-between
+    span = comment.user.email
+    small.text-muted = l(comment.created_at, format: :short)
+  .card-body = comment.content

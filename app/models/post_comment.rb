@@ -7,5 +7,7 @@ class PostComment < ApplicationRecord
   belongs_to :post
   belongs_to :user
 
+  default_scope { order(created_at: :desc) }
+
   validates :content, presence: true, length: { minimum: MIN_CONTENT_LENGTH, maximum: MAX_CONTENT_LENGTH }
 end
