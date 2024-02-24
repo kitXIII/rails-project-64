@@ -22,7 +22,7 @@ class Posts::CommentsController < ApplicationController
 
   def render_post
     @new_comment = PostComment.new
-    flash.now[:notice] = @comment.errors.full_messages.first
+    flash.now[:error] = @comment.errors.full_messages.first
     render 'posts/show', status: :unprocessable_entity
   end
 
