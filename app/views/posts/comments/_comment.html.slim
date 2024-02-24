@@ -3,3 +3,7 @@
     span = comment.user.email
     small.text-muted = l(comment.created_at, format: :short)
   .card-body = comment.content
+- if comment.has_children?
+  .ms-3.ms-md-5
+    - comment.children.each do |child|
+      = render 'posts/comments/comment', comment: child

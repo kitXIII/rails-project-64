@@ -14,5 +14,5 @@
     .mt-3
       span.fs-5.fw-light = t('.comments')
       = render 'posts/comments/form', post: @post, comment: @new_comment
-    - @post.comments.each do |comment|
+    - @post.comments.roots.each do |comment|
       = render 'posts/comments/comment', comment:
