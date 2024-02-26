@@ -1,8 +1,24 @@
 .card.mt-2
+
   .card-header.d-flex.flex-wrap.gap-2.align-items-baseline.justify-content-between
     span = comment.user.email
     small.text-muted = l(comment.created_at, format: :short)
-  .card-body = comment.content
+
+  .card-body
+    p.card-text = comment.content
+
+    - if user_signed_in?
+
+      a.text-decoration-none (
+        data-bs-toggle='collapse'
+        href="#collapse-comment-form-#{comment.id}"
+        aria-expanded='false'
+        aria-controls='collapseExample')
+        = t('.comment')
+
+      .collapse id="collapse-comment-form-#{comment.id}"
+        = render 'posts/comments/form', parent_id: comment.id
+
 - if comment.has_children?
   .ms-3.ms-md-5
     - comment.children.each do |child|

@@ -17,6 +17,8 @@ ru:
     comments:
       create:
         success: Ваш комментарий добавлен
+      comment:
+        comment: Ответить
   helpers:
     submit:
       post:

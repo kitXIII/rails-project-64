@@ -7,4 +7,10 @@ ru:
         body: Содержание
       post_comment:
         content: Комментарий
-
+        parent_id: ''
+    errors:
+      models:
+        post_comment:
+          attributes:
+            parent_id:
+              invalid_parent: Некорректный родительский комментарий

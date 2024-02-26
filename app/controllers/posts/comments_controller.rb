@@ -17,7 +17,7 @@ class Posts::CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:post_comment).permit(:content)
+    params.require(:post_comment).permit(:content, :parent_id)
   end
 
   def render_post
@@ -28,6 +28,5 @@ class Posts::CommentsController < ApplicationController
 
   def set_post
     @post = Post.find params[:post_id]
-    raise ActiveRecord::RecordNotFound if @post.nil?
   end
 end

@@ -12,4 +12,8 @@ class PostComment < ApplicationRecord
   default_scope { order(created_at: :desc) }
 
   validates :content, presence: true, length: { minimum: MIN_CONTENT_LENGTH, maximum: MAX_CONTENT_LENGTH }
+  validate :correct_parent_post
+  def correct_parent_post
+    errors.add(:parent_id, :invalid_parent) if has_parent? && parent.post != post
+  end
 end

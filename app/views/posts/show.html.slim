@@ -13,6 +13,6 @@
       span = distance_of_time_in_words_to_now(@post.created_at)
     .mt-3
       span.fs-5.fw-light = t('.comments')
-      = render 'posts/comments/form', post: @post, comment: @new_comment
+      = render 'posts/comments/form', parent_id: nil
     - @post.comments.roots.each do |comment|
       = render 'posts/comments/comment', comment:

@@ -44,7 +44,9 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should not create post for unauthorized user' do
-    post posts_url, params: { post: @attrs }
+    assert_no_difference 'Post.count' do
+      post posts_url, params: { post: @attrs }
+    end
 
     assert_redirected_to new_user_session_path
   end
