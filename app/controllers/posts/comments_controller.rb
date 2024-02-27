@@ -10,7 +10,7 @@ class Posts::CommentsController < ApplicationController
     if @comment.save
       redirect_to post_path(@post), notice: t('.success')
     else
-      render_post
+      redirect_to post_path(@post), alert: @comment.errors.full_messages.first
     end
   end
 
@@ -18,12 +18,6 @@ class Posts::CommentsController < ApplicationController
 
   def comment_params
     params.require(:post_comment).permit(:content, :parent_id)
-  end
-
-  def render_post
-    @new_comment = PostComment.new
-    flash.now[:error] = @comment.errors.full_messages.first
-    render 'posts/show', status: :unprocessable_entity
   end
 
   def set_post
