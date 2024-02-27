@@ -8,9 +8,15 @@ ru:
       post_comment:
         content: Комментарий
         parent_id: ''
+      post_like:
+        post: Пост
     errors:
       models:
         post_comment:
           attributes:
             parent_id:
               invalid_parent: Некорректный родительский комментарий
+        post_like:
+          attributes:
+            post:
+              taken: уже лайкнут
