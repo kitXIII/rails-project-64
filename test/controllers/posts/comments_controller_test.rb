@@ -52,6 +52,6 @@ class Posts::CommentsControllerTest < ActionDispatch::IntegrationTest
            params: { post_comment: { **@attrs, parent_id: @comment_belongs_to_another_post.id } }
     end
 
-    assert_response 422
+    assert_redirected_to post_url(@post)
   end
 end
