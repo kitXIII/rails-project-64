@@ -10,7 +10,7 @@ class Posts::LikesController < Posts::ApplicationController
   end
 
   def destroy
-    like = PostLike.find(params[:id])
+    like = current_user.likes.find(params[:id])
 
     flash[:alert] = like.errors.full_messages.first unless like.destroy!
 

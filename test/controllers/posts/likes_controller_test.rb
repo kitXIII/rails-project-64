@@ -10,6 +10,7 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
     @user = users(:two)
     @liked_post = posts(:two)
     @like_of_liked_post = post_likes(:two)
+    @like_from_another_user = post_likes(:one)
 
     sign_in(@user)
   end
@@ -56,5 +57,13 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to new_user_session_path
+  end
+
+  test 'should not destroy like from another user' do
+    assert_no_difference 'PostLike.count' do
+      delete post_like_url(@like_from_another_user.post, @like_from_another_user)
+    end
+
+    assert_response :missing
   end
 end
