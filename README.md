@@ -10,6 +10,8 @@
 
 * Authentication with [devise](https://github.com/heartcombo/devise)
 * Adaptive UI with [bootstrap](https://getbootstrap.com)
+* Hierarchy of comments witn [ancestry](https://github.com/stefankroes/ancestry)
+* Post likes
 
 ### Example
 
