@@ -13,6 +13,7 @@ ru:
     create:
       success: Ваш пост опубликован.
     post:
+      liked: "Понравилось: %{count}"
       read_more: Читать далее
     comments:
       create:

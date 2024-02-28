@@ -8,11 +8,30 @@
     h1.mb-4
       = @post.title
     = simple_format(@post.body)
-    .d-flex.flex-wrap.text-muted.gap-2.mt-3
-      strong = @post.creator.email
-      span = distance_of_time_in_words_to_now(@post.created_at)
+    .d-flex.flex-wrap.gap-2.mt-3
+      strong.text-muted
+        = @post.creator.email
+      span.text-muted
+        = distance_of_time_in_words_to_now(@post.created_at)
+      .ms-auto
+        span.me-2 = @post.likes.count
+        - if user_signed_in?
+          - if current_user.liked?(@post)
+            = link_to post_like_path(@post, current_user.like_for(@post)),
+                    data: { turbo_method: :delete },
+                    class: 'link-dark' do
+              i.bi.bi-hand-thumbs-up-fill
+          - else
+            = link_to post_likes_path(@post),
+                    data: { turbo_method: :post },
+                    class: 'link-dark' do
+              i.bi.bi-hand-thumbs-up
+        - else
+          i.bi.bi-hand-thumbs-up
+
     .mt-3
       span.fs-5.fw-light = t('.comments')
-      = render 'posts/comments/form', parent_id: nil
+      - if user_signed_in?
+        = render 'posts/comments/form', parent_id: nil
     - @post.comments.roots.each do |comment|
       = render 'posts/comments/comment', comment:
