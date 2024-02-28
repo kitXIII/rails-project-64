@@ -10,9 +10,9 @@ class Posts::LikesController < Posts::ApplicationController
   end
 
   def destroy
-    like = current_user.likes.find(params[:id])
+    like = current_user.likes.find_by(id: params[:id])
 
-    flash[:alert] = like.errors.full_messages.first unless like.destroy!
+    flash[:alert] = like.errors.full_messages.first if like && !like.destroy!
 
     redirect_to(resource_post)
   end

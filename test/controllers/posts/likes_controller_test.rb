@@ -64,6 +64,6 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
       delete post_like_url(@like_from_another_user.post, @like_from_another_user)
     end
 
-    assert_response :missing
+    assert_redirected_to post_url(@like_from_another_user.post)
   end
 end
