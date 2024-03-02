@@ -33,5 +33,5 @@
       span.fs-5.fw-light = t('.comments')
       - if user_signed_in?
         = render 'posts/comments/form', parent_id: nil
-    - @post.comments.roots.each do |comment|
+    - @post.comments.roots.ordered_by_created_at.each do |comment|
       = render 'posts/comments/comment', comment:
