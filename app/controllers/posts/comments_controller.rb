@@ -5,8 +5,12 @@ class Posts::CommentsController < Posts::ApplicationController
     @comment = current_user.comments.build(comment_params)
     @comment.post = resource_post
 
-    notification = { notice: t('.success') }
-    notification = { alert: @comment.errors.full_messages.first } unless @comment.save
+    notification =
+      if @comment.save
+        { notice: t('.success') }
+      else
+        { alert: @comment.errors.full_messages.to_sentence }
+      end
 
     redirect_to post_path(resource_post), notification
   end
