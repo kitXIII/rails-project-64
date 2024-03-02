@@ -6,6 +6,6 @@
     .d-flex.flex-wrap.text-muted.small.gap-2
       span = distance_of_time_in_words_to_now(post.created_at)
       strong.ms-auto = post.creator.email
-      span = t('.liked', count: post.likes.count)
+      span = t('.liked', count: post.likes_count)
       .flex-grow-1.text-end
         = link_to t('.read_more'), post_path(post), class: 'text-decoration-none'

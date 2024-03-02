@@ -14,7 +14,7 @@
       span.text-muted
         = distance_of_time_in_words_to_now(@post.created_at)
       .ms-auto
-        span.me-2 = @post.likes.count
+        span.me-2 = @post.likes_count
         - if user_signed_in?
           - if current_user.liked?(@post)
             = link_to post_like_path(@post, current_user.like_for(@post)),
