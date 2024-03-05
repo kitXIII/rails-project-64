@@ -1,18 +1,46 @@
-# Public blog (Ruby on Rails project)
+# Public blog
 [![Actions Status](https://github.com/kitXIII/rails-project-64/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/kitXIII/rails-project-64/actions)
 [![CI](https://github.com/kitXIII/rails-project-64/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/kitXIII/rails-project-64/actions/workflows/ci.yml)
 
-### Requirements
+Simple blog engine on Ruby on Rails.
 
-* Ruby 3.2.2
+Users can read posts, publish their own posts, leave comments on posts and comments and like posts.
 
-### Features
+You can see [demo](https://kitxiii-blog.onrender.com/) published on [render](https://render.com/) service
+
+### Implementation Features
 
 * Authentication with [devise](https://github.com/heartcombo/devise)
 * Adaptive UI with [bootstrap](https://getbootstrap.com)
 * Hierarchy of comments witn [ancestry](https://github.com/stefankroes/ancestry)
-* Post likes
 
-### Example
+### Development
 
-[Live demo](https://kitxiii-blog.onrender.com/)
+#### Requirements
+
+Make sure that Ruby 3.2.2 or higher is installed and used on the system
+
+#### Local start
+
+To install dependencies and prepare local database, run: 
+```shell
+make install
+```
+
+To run locally, enter:
+```shell
+make start
+```
+And open your browser at http://localhost:3000
+
+#### Tests and linter check
+
+Tests can be start using:
+```shell
+make test 
+```
+
+Linter check can be run with:
+```shell
+make lint 
+```

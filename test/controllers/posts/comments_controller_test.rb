@@ -45,7 +45,7 @@ class Posts::CommentsControllerTest < ActionDispatch::IntegrationTest
     assert_includes @comment_with_comments.children, post_comment
   end
 
-  test 'should not create comment when post and patent comment post are not same' do
+  test 'should not create comment when post and parent comment post are not same' do
     sign_in(@user)
     assert_no_difference 'PostComment.count' do
       post post_comments_url(@post),
