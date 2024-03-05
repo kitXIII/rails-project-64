@@ -6,7 +6,7 @@ Simple blog engine on Ruby on Rails.
 
 Users can read posts, publish their own posts, leave comments on posts and comments and like posts.
 
-You can see [demo](https://kitxiii-blog.onrender.com/) published on [render](https://render.com/) service
+The [demo](https://kitxiii-blog.onrender.com/) is published on [render](https://render.com/) service
 
 ### Implementation Features
 
@@ -18,7 +18,7 @@ You can see [demo](https://kitxiii-blog.onrender.com/) published on [render](htt
 
 #### Requirements
 
-Make sure that Ruby 3.2.2 or higher is installed and used on the system
+* Ruby 3.2.2 or higher
 
 #### Local start
 
