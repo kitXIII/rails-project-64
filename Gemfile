@@ -10,6 +10,7 @@ gem 'rails', '~> 7.1.3'
 gem 'ancestry'
 gem 'devise'
 gem 'devise-i18n'
+gem 'dotenv-rails'
 gem 'faker'
 gem 'rails-i18n'
 gem 'rubocop', require: false
