@@ -10,7 +10,6 @@ gem 'rails', '~> 7.1.3'
 gem 'ancestry'
 gem 'devise'
 gem 'devise-i18n'
-gem 'dotenv-rails'
 gem 'faker'
 gem 'rails-i18n'
 gem 'rubocop', require: false
@@ -65,6 +64,7 @@ gem 'bootsnap', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri windows]
+  gem 'dotenv-rails'
 
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.4'
